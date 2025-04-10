@@ -7,7 +7,7 @@ import PieChartModel from "./Pagina/Graficos-Estilos/Pie_Modelo";
 import Top_Nav from "./Pagina/Layout/Top_Nav";
 import { useState, useEffect } from 'react';
 import Footer_fun from "./Pagina/Layout/Footer";
-
+import Avisos from './Pagina/aviso/aviso';
 function App() {
   const [dados, setDados] = useState({});
   const [agua, setAgua] = useState([]);
@@ -227,7 +227,7 @@ function App() {
   return (
     <div className="div-Container">
       <Top_Nav />
-      
+      <Avisos/>
       <div className="coluna">
         <div className="card-data">
           <label className='dads'>Temperatura Água</label>
@@ -235,7 +235,7 @@ function App() {
             data={agua}
             dataKeyX="name"
             dataKeysY={["temperaturaAgua"]}
-            colors={["#82ca9d"]}
+            colors={["#1e90ff"]}
             
           />
           <label>Temperatura Atual: {agua.length > 0 ? agua[agua.length - 1].temperaturaAgua + " ºC" : "Carregando..."}</label>
@@ -248,19 +248,19 @@ function App() {
             data={agua_n}
             dataKeyX="name"
             dataKeysY={["nivelAgua"]}
-            colors={["#82ca9d"]}
+            colors={["#87cefa"]}
           />
           <label>Nivel Atual: {agua_n.length > 0 ? agua_n[agua_n.length - 1].nivelAgua + " L" : "Carregando..."}</label>
         </div>
 
         
         <div className="card-data">
-          <label className='dads'>Temperatura Óleo</label>
+          <label className='dads'>Pressão Óleo</label>
           <LineChartModel
             data={oleo_p}
             dataKeyX="name"
             dataKeysY={["pressaoOleo"]}
-            colors={["#82ca9d"]}
+            colors={["#ffa500"]}
             
           />
           <label>Pressão Atual: {oleo_p.length > 0 ? oleo_p[oleo_p.length - 1].pressaoOleo + " KPA" : "Carregando..."}</label>
@@ -276,7 +276,7 @@ function App() {
             data={acelerador}
             dataKeyX="name"
             dataKeysY={["acelerador"]}
-            colors={["#82ca9d"]}
+            colors={["#32cd32"]}
             
           />
           <label>Aceleração Atual: {acelerador.length > 0 ? acelerador[acelerador.length - 1].acelerador + " KM" : "Carregando..."}</label>
@@ -289,7 +289,7 @@ function App() {
             data={velocidade}
             dataKeyX="name"
             dataKeysY={["velocidade"]}
-            colors={["#82ca9d"]}
+            colors={["#ff4500"]}
           />
           <label>Velocidade Atual: {velocidade.length > 0 ? velocidade[velocidade.length - 1].velocidade + " KM" : "Carregando..."}</label>
         </div>
@@ -299,7 +299,7 @@ function App() {
             data={rpmMotor}
             dataKeyX="name"
             dataKeysY={["rpmMotor"]}
-            colors={["#82ca9d"]}
+            colors={["#8a2be2"]}
             
           />
           <label>Rpm Atual: {rpmMotor.length > 0 ? rpmMotor[rpmMotor.length - 1].rpmMotor + " KM" : "Carregando..."}</label>
@@ -315,7 +315,7 @@ function App() {
             data={oleo}
             dataKeyX="name"
             dataKeysY={["temperaturaOleo"]}
-            colors={["#82ca9d"]}
+            colors={["#8b4513"]}
           />
           <label>Temperatura Atual: {oleo.length > 0 ? oleo[oleo.length - 1].temperaturaOleo + " ºC" : "Carregando..."}</label>
         </div>
@@ -325,7 +325,7 @@ function App() {
             data={oleo_n}
             dataKeyX="name"
             dataKeysY={["nivelOleo"]}
-            colors={["#82ca9d"]}
+            colors={["#d2691e"]}
           />
           <label>Nivel Atual: {oleo_n.length > 0 ? oleo_n[oleo_n.length - 1].nivelOleo + " L" : "Carregando..."}</label>
         </div>
@@ -334,9 +334,9 @@ function App() {
             data={Tb}
             dataKeyX="name"
             dataKeysY={["tensaoBateria"]}
-            colors={["#82ca9d"]}
+            colors={["#ffd700"]}
           />
-<label>Tensão Atual: {Tb.length > 0 ? Tb[Tb.length - 1].tensaoBateria + " V" : "Carregando..."}</label>
+          <label>Tensão Atual: {Tb.length > 0 ? Tb[Tb.length - 1].tensaoBateria + " V" : "Carregando..."}</label>
         </div>
       </div>
 
